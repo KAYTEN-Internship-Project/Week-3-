@@ -1,4 +1,4 @@
-VERSION ""
+VERSION "TC375 Lite CAN-UART Demo DBC v1"
 
 NS_ :
     NS_DESC_
@@ -31,16 +31,17 @@ NS_ :
     SG_MUL_VAL_
 
 BS_:
+
 BU_: TC375 PCAN
 
-BO_ 1024 TC375_Volt: 8 TC375
-   SG_ Voltage_V : 6|12@1+ (0.01,0) [0|40.95] "V" PCAN
+BO_ 1024 PCAN_Volt: 8 PCAN
+ SG_ Voltage_V : 6|12@1+ (0.01,0) [0|40.95] "V" TC375
 
-BO_ 1280 TC375_Curr: 8 TC375
-   SG_ Current_A : 16|8@1+ (0.1,0) [0|25.5] "A" PCAN
+BO_ 1280 PCAN_Curr: 8 PCAN
+ SG_ Current_A : 16|8@1+ (0.1,0) [0|25.5] "A" TC375
 
-BO_ 1536 TC375_Temp: 8 TC375
-   SG_ Temperature_C : 32|12@1+ (0.1,0) [0|409.5] "degC" PCAN
+BO_ 1536 PCAN_Temp: 8 PCAN
+ SG_ Temperature_C : 32|12@1+ (0.1,0) [0|409.5] "degC" TC375
 
 CM_ BO_ 1024 "Voltage value (raw/100). startBit=6 len=12, Intel LSB0.";
 CM_ SG_ 1024 Voltage_V "Voltage; factor=0.01; offset=0.";
@@ -49,9 +50,21 @@ CM_ SG_ 1280 Current_A "Current; factor=0.1; offset=0.";
 CM_ BO_ 1536 "Temperature value (raw/10). startBit=32 len=12, Intel LSB0.";
 CM_ SG_ 1536 Temperature_C "Temperature; factor=0.1; offset=0.";
 
-BA_DEF_ BO_ "GenMsgBackgroundColor" STRING ;
-BA_DEF_ BO_ "GenMsgForegroundColor" STRING ;
-BA_DEF_ BO_ "isj1939dbc" INT 0 0;
-BA_DEF_DEF_ "GenMsgBackgroundColor" "#ffffff";
-BA_DEF_DEF_ "GenMsgForegroundColor" "#000000";
-BA_DEF_DEF_ "isj1939dbc" 0;
+# --- Optional: show both possible transmitters (PCAN normally, TC375 when test-TX enabled)
+BO_TX_BU_ 1024 PCAN,TC375;
+BO_TX_BU_ 1280 PCAN,TC375;
+BO_TX_BU_ 1536 PCAN,TC375;
+
+# --- Useful common attributes (optional)
+BA_DEF_  "GenMsgCycleTime" INT 0 60000;
+BA_DEF_  "GenMsgSendType"  INT 0 9;
+BA_DEF_  "WarnHigh"        FLOAT 0 10000;        # custom attribute for signal high-warning thresholds
+
+# defaults
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "GenMsgSendType"  0;
+
+# assign thresholds to signals (matches firmware WARNING logic)
+BA_ "WarnHigh" SG_ 1024 Voltage_V 15.0;
+BA_ "WarnHigh" SG_ 1280 Current_A 10.0;
+BA_ "WarnHigh" SG_ 1536 Temperature_C 42.0;
