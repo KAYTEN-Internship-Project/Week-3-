@@ -86,6 +86,6 @@ The values printed over UART correspond to the decoded signals using the formula
 
 ---
 
-<img width="653" height="61" alt="Warning_Uart" src="https://github.com/user-attachments/assets/6e2e4197-ebd6-49e7-8e5e-8469b77ec591" />
+<img width="965" height="61" alt="Warning_Uart" src="https://github.com/user-attachments/assets/6e2e4197-ebd6-49e7-8e5e-8469b77ec591" />
 
 
