@@ -3,7 +3,7 @@
 
 ## Overview
 This project demonstrates **Classic CAN reception** on the Infineon **AURIX™ TC375 Lite Kit** and forwarding the decoded values to a PC terminal via **UART**.  
-With a **PEAK PCAN-USB** adapter and **PCAN-View** software, you can transmit CAN frames from the PC. The TC375 receives them, decodes the bit-fields, and prints the physical values (Voltage, Current, Temperature) over UART at **115200 baud**.
+With a **PEAK PCAN-USB** adapter and **PCAN-View** software, you can transmit CAN frames from the PC. The TC375 receives them, decodes the bit-fields, and prints the physical values (Voltage, Current, Temperature) over UART at **115200 baud**.iLLD Libraries which belongs to Infinion Tecnhnology company  are used .
 
 ---
 
