@@ -47,7 +47,7 @@ PCAN-View TX frames (DLC=8, hex):
 | 0x500 | 8.8 A          | 88   | `00 00 58 00 00 00 00 00`            |
 | 0x600 | 32.3 °C        | 323  | `00 00 00 00 43 01 00 00`
 ## WARNING Logic (in UART output)
-
+PCAN-View TX frames (DLC=8, hex):
 | ID    | Physical Value | Raw   | DLC=8 Payload (hex)                  |
 |-------|----------------|-------|--------------------------------------|
 | 0x400 | 15.00 V        | 1500  | `00 77 01 00 00 00 00 00`            |
