@@ -76,16 +76,16 @@ The values printed over UART correspond to the decoded signals using the formula
 
 ---
 
-<img width="1906" height="335" alt="UARTFOTOSU" src="https://github.com/user-attachments/assets/657c9089-d63d-4659-80e6-e4c0a1a9f4d6" />
+<img width="965" height="160" alt="UARTFOTOSU" src="https://github.com/user-attachments/assets/657c9089-d63d-4659-80e6-e4c0a1a9f4d6" />
 
 ---
 
 ### High / Warning value
 
-<img width="967" height="160" alt="Warning_Uart peakcan" src="https://github.com/user-attachments/assets/455e4938-64ae-46d0-86ba-e5ae3b3c1c86" />
+<img width="965" height="160" alt="Warning_Uart peakcan" src="https://github.com/user-attachments/assets/455e4938-64ae-46d0-86ba-e5ae3b3c1c86" />
 
 ---
 
-<img width="965" height="61" alt="Warning_Uart" src="https://github.com/user-attachments/assets/6e2e4197-ebd6-49e7-8e5e-8469b77ec591" />
+<img width="965" height="160" alt="Warning_Uart" src="https://github.com/user-attachments/assets/6e2e4197-ebd6-49e7-8e5e-8469b77ec591" />
 
 
